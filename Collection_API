@@ -1,0 +1,256 @@
+{
+	"info": {
+		"_postman_id": "1c0de3fa-b76b-4e36-9575-c9d6b5c369ab",
+		"name": "New Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27668391"
+	},
+	"item": [
+		{
+			"name": "signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\" : \"1234\",\r\n    \"email\" : \"1234@mail.ru\",\r\n    \"password\" : \"testing\",\r\n    \"role\" : \"customer\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8075/api/v1/auth/signup",
+					"host": [
+						"localhost"
+					],
+					"port": "8075",
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\" : \"1234@mail.ru\",\r\n    \"password\" : \"testing\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8075/api/v1/auth/login",
+					"host": [
+						"localhost"
+					],
+					"port": "8075",
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "order/make",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\" : \"1\",\r\n    \"dishes\" : [\r\n        {\r\n            \"dish\" : \"Tom Yum\", \r\n            \"quantity\" : 1\r\n        },\r\n        {\r\n            \"dish\" : \"Chocolate ice-cream\", \r\n            \"quantity\" : 1\r\n        }\r\n    ],\r\n    \"specialties\" : \"Tom Yum should be with double squids and more spicy\",\r\n    \"status\" : \"active\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8075/api/order/make",
+					"host": [
+						"localhost"
+					],
+					"port": "8075",
+					"path": [
+						"api",
+						"order",
+						"make"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "order/show",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\" : 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8075/api/order/show",
+					"host": [
+						"localhost"
+					],
+					"port": "8075",
+					"path": [
+						"api",
+						"order",
+						"show"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "menu/show",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8075/api/menu/show",
+					"host": [
+						"localhost"
+					],
+					"port": "8075",
+					"path": [
+						"api",
+						"menu",
+						"show"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "dish/add",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\" : \"1\",\r\n    \"name\" : \"Gummy bears\",\r\n    \"description\" : \"Marmelade fruit bears\",\r\n    \"price\" : 500,\r\n    \"quantity\" : 10\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8075/api/dish/add",
+					"host": [
+						"localhost"
+					],
+					"port": "8075",
+					"path": [
+						"api",
+						"dish",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "dish/delete",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\" : 1,\r\n    \"name\" : \"Gummy bears\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8075/api/dish/delete",
+					"host": [
+						"localhost"
+					],
+					"port": "8075",
+					"path": [
+						"api",
+						"dish",
+						"delete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "dish/change",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer_eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJmcm9zdGluZ2NhdEBtYWlsLnJ1IiwiaWF0IjoxNjg1MzkzODY2LCJleHAiOjE2ODUzOTc0NjZ9.B0wF3Bbh18tWYBbVJz-4HyRWPe7plDHcsNdZ-sLzZQ4",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\" : \"1\",\r\n    \"name\" : \"Tom Yum\",\r\n    \"description\" : \"Chinese dream\",\r\n    \"price\" : 450,\r\n    \"quantity\" : 15\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8075/api/dish/change",
+					"host": [
+						"localhost"
+					],
+					"port": "8075",
+					"path": [
+						"api",
+						"dish",
+						"change"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
