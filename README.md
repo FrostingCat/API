@@ -18,9 +18,9 @@
 После авторизации пользователь может посмотреть информацию о себе: идентификатор, имя, почту, роль. Для пвторизации необходимо ввести "Bearer_" и авторизационный токен пользователя, полученный при входе пользователя в систему.
 
 ### Архитектура системы
-За регистрацию и авторизацию пользователя отвечают классы AuthenticationRestController и UserRestController. Для реализации проверки почты, добавления пользователя в базу данных и другие основные функции приложения отвечает класс UserServiceImpl. Присутствует единственная сущность User и несколько Dto: AuthenticationRequestDto, SignUpRequestDto, UserDto.
+За регистрацию и авторизацию пользователя отвечают классы `AuthenticationRestController` и `UserRestController`. Для реализации проверки почты, добавления пользователя в базу данных и другие основные функции приложения отвечает класс `UserServiceImpl`. Присутствует единственная сущность `User` и несколько `Dto`: `SignUpRequestDto`, `AuthenticationRequestDto`, `UserDto`.
 
-В проекте содержится подключенная база данных user, которая хранит всех зарегистрировавшихся пользователей.
+В проекте содержится подключенная база данных `user`, которая хранит всех зарегистрировавшихся пользователей.
 
 ## Микросервис обработки заказов
 
@@ -42,6 +42,6 @@
 Реализована возможность получать список всех блюд в меню: их идентификаторы, названия, описание, цена, количество.
 
 ### Архитектура системы
-Для работы с блюдами используется класс ChangeDishRestController, для работы с заказами - OrdersRestController, с меню - ShowMenuRestController. Для реализации  основных функций приложения отвечает класс OrderServiceImpl. Присутствует сущности Dish, DishQuantity, Order, OrderDish и несколько Dto: AddDishDto, ChangeDishDto, DeleteDishDto, MakeOrderDto, ShowOrderDto.
+Для работы с блюдами используется класс `ChangeDishRestController`, для работы с заказами - `OrdersRestController`, с меню - `ShowMenuRestController`. Для реализации  основных функций приложения отвечает класс `OrderServiceImpl`. Присутствует сущности `Dish`, `DishQuantity`, `Order`, `OrderDish` и несколько `Dto`: `AddDishDto`, `ChangeDishDto`, `DeleteDishDto`, `MakeOrderDto`, `ShowOrderDto`.
 
 В проекте содержится подключенные базы данных `dish`, `order_dish` и `orders`.
